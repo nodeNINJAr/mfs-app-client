@@ -4,12 +4,15 @@ import "./index.css";
 import { BrowserRouter } from "react-router";
 import Router from "./router/Router";
 import '@ant-design/v5-patch-for-react-19';
+import { AuthProvider } from "./context/AuthContext";
 
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-       <Router/>
+       <AuthProvider>
+          <Router/>
+       </AuthProvider>
     </BrowserRouter>
   </StrictMode>
 );

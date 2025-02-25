@@ -2,26 +2,22 @@ import React from "react";
 import { Form, Input, Button, message } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useForm, Controller } from "react-hook-form";
-import { useNavigate } from "react-router";
-import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useAuth } from "../../context/AuthContext";
 
+
+
+// 
 const Login = () => {
-    const axiosPublic = useAxiosPublic();
+  const { login } = useAuth();
   const { control, handleSubmit, formState: { errors } } = useForm();
-  const navigate = useNavigate();
 
   // Handle form submission
-  const onSubmit = async (data) => {
+  const onSubmit = async (values) => {
     try {
-      const response = await axiosPublic.post("/auth/login", data);
-      if (response.data?.token) {
-        message.success("Login successful!");
-        navigate("/dashboard"); // Redirect to dashboard
-      } else {
-        message.error(response.data.message);
-      }
+      await login(values);
+      message.success("Login successful!");
     } catch (error) {
-      message.error(`${error?.response?.data?.message}`);
+      message.error("Login failed. Please try again.");
     }
   };
 

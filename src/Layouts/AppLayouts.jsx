@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Layouts = () => {
+const AppLayouts = () => {
   return (
     <div className='text-5xl text-red-500'>Layouts</div>
   )
 }
 
-export default Layouts
+export default AppLayouts;

@@ -31,6 +31,7 @@ const {data:users=[], isLoading, refetch} = useQuery({
     setSearchText(value);
   };
 
+
 //   Handle block/unblock user
   const handleBlockUser = async (userId, isBlocked) => {
     try {
@@ -42,6 +43,8 @@ const {data:users=[], isLoading, refetch} = useQuery({
       message.error("Failed to update user status");
     }
   };
+
+  
 
   // Columns for the users table
   const columns = [

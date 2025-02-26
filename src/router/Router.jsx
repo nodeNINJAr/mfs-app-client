@@ -12,6 +12,7 @@ import Transactions from "../pages/Transactions";
 import CashIn from "../pages/agent/CashIn";
 import UserManagement from "../pages/admin/UserManagement";
 import AdminStats from "../pages/admin/AdminStats";
+import UserTransactions from "../pages/admin/UserTransactions";
 
 
 
@@ -34,6 +35,7 @@ const Router = () => {
     <Route path="admin" element={<AdminDashboard />}>
        <Route index element={<AdminStats/>} />
        <Route path="users" element={<UserManagement />} />
+       <Route path="users/:userId/transactions" element={<UserTransactions/>} />
     </Route>
 
     

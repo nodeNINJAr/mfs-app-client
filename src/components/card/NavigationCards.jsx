@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const services = [
   { id: 1, title: "Send Money", icon: "💸", path: "/user/send-money" },
   { id: 2, title: "Cash Out", icon: "🏧", path: "/user/cash-out" },
-  { id: 3, title: "Transaction", icon: "📜", path: "/transaction" },
+  { id: 3, title: "Transaction", icon: "📜", path: "/user/transactions" },
 ];
 
 const NavigationCards = () => {

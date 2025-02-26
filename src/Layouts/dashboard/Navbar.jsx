@@ -17,7 +17,7 @@ const handleLogOut = async()=>{
             {/* <img src="" alt="" /> */}
             <div>
                  <h2>{user?.name}</h2>
-                 <h3>Main Balanced {user?.balance} Taka</h3>
+                 <h3>Main Balanced {user?.balance / 100} Taka</h3>
             </div>
         </div>
  

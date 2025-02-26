@@ -3,6 +3,9 @@ import Cookies from "js-cookie";
 import { useNavigate } from "react-router";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 
+
+
+// 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -40,7 +43,21 @@ export const AuthProvider = ({ children }) => {
       const response = await axiosPublic.post("/auth/login", credentials);
       Cookies.set("token", response.data.token, { expires: 1, path: "/" });
       setUser(response.data.user);
-      navigate("/user/dashboard", { replace: true });
+      // 
+       switch (response?.data?.user?.accountType) {
+        case "admin":
+          navigate("/admin/dashboard", { replace: true });
+          break;
+        case "user":
+          navigate("/user/dashboard", { replace: true });
+          break;
+        case "agent":
+          navigate("/agent/dashboard", { replace: true });
+          break;
+        default:
+          navigate("/auth/login", { replace: true }); // Redirect to login if role is not recognized
+          break;
+      }
     } catch (error) {
       console.error("Login failed:", error);
       throw error;

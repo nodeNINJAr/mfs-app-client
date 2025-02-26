@@ -15,7 +15,7 @@ const Register = () => {
 
   // Handle form submission
   const onSubmit = async (data) => {
-    // 
+    //
     try {
       const response = await axiosPublic.post("/auth/register", data);
       if (response.status===201) {

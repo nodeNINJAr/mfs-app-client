@@ -13,6 +13,7 @@ import CashIn from "../pages/agent/CashIn";
 import UserManagement from "../pages/admin/UserManagement";
 import AdminStats from "../pages/admin/AdminStats";
 import UserTransactions from "../pages/admin/UserTransactions";
+import AgentApproval from "../pages/admin/AgentApproval";
 
 
 
@@ -36,6 +37,7 @@ const Router = () => {
        <Route index element={<AdminStats/>} />
        <Route path="users" element={<UserManagement />} />
        <Route path="users/:userId/transactions" element={<UserTransactions/>} />
+       <Route path="agent-approval" element={<AgentApproval />} />
     </Route>
 
     

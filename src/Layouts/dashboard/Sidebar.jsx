@@ -15,7 +15,7 @@ const Topbar = ({ role }) => {
   const adminMenu = [
     { key: "dashboard", label: "Dashboard", icon: <HomeOutlined />, path: "/admin" },
     { key: "users", label: "Manage Users", icon: <UserOutlined />, path: "/admin/users" },
-    { key: "agents", label: "Approve Agents", icon: <SettingOutlined />, path: "/admin/agents" },
+    { key: "agents", label: "Approve Agents", icon: <SettingOutlined />, path: "/admin/agent-approval" },
   ];
 
 

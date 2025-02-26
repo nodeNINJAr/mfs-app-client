@@ -13,24 +13,11 @@ const Topbar = ({ role }) => {
 
   // Define menu items for each role
   const adminMenu = [
-    { key: "dashboard", label: "Dashboard", icon: <HomeOutlined />, path: "/admin/dashboard" },
+    { key: "dashboard", label: "Dashboard", icon: <HomeOutlined />, path: "/admin" },
     { key: "users", label: "Manage Users", icon: <UserOutlined />, path: "/admin/users" },
     { key: "agents", label: "Approve Agents", icon: <SettingOutlined />, path: "/admin/agents" },
   ];
 
-  const userMenu = [
-    { key: "balance", label: "Balance Inquiry", icon: <HomeOutlined />, path: "/user/balance" },
-    { key: "transactions", label: "Transactions", icon: <SettingOutlined />, path: "/user/transactions" },
-    { key: "send-money", label: "Send Money", icon: <MoneyCollectOutlined />, path: "/user/send-money" },
-  ];
-
-  const agentMenu = [
-    { key: "balance", label: "Balance Inquiry", icon: <HomeOutlined />, path: "/agent/balance" },
-    { key: "cash-in", label: "Cash-In Requests", icon: <SettingOutlined />, path: "/agent/cash-in" },
-  ];
-
-  // Determine which menu to display based on the role
-  const menuItems = role === "admin" ? adminMenu : role === "user" ? userMenu : agentMenu;
 
   // Handle menu item clicks
   const handleMenuClick = (item) => {
@@ -47,7 +34,7 @@ const Topbar = ({ role }) => {
         <Menu
           mode="inline"
           defaultSelectedKeys={["dashboard"]}
-          items={menuItems.map((item) => ({
+          items={adminMenu.map((item) => ({
             key: item.key,
             icon: item.icon,
             label: item.label,

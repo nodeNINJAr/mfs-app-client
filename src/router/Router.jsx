@@ -10,6 +10,8 @@ import SendMoney from "../pages/user/SendMoney";
 import CashOut from "../pages/user/CashOut";
 import Transactions from "../pages/Transactions";
 import CashIn from "../pages/agent/CashIn";
+import UserManagement from "../pages/admin/UserManagement";
+import AdminStats from "../pages/admin/AdminStats";
 
 
 
@@ -29,8 +31,12 @@ const Router = () => {
     <Route path="agent/CashIn" element={<CashIn />}/>
     <Route path="agent/transactions" element={<Transactions/>}/>
      {/* admin route */}
-    <Route path="/admin/dashboard" element={<AdminDashboard />} />
+    <Route path="admin" element={<AdminDashboard />}>
+       <Route index element={<AdminStats/>} />
+       <Route path="users" element={<UserManagement />} />
+    </Route>
 
+    
     {/* auth */}
        <Route path="auth/login" element={<Login />} />
        <Route path="auth/register" element={<Register />} />

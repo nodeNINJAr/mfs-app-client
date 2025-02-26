@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
       // 
        switch (response?.data?.user?.accountType) {
         case "admin":
-          navigate("/admin/dashboard", { replace: true });
+          navigate("/admin", { replace: true });
           break;
         case "user":
           navigate("/user/dashboard", { replace: true });

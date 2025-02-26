@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
-import Topbar from "./Topbar";
+import Topbar from "./Sidebar";
 import NavigationCards from "../../components/card/NavigationCards";
 import { Outlet } from "react-router";
 
